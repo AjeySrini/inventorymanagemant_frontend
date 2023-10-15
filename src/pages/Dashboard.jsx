@@ -10,7 +10,7 @@ const Dashboard = () => {
         <h1> Inventory Management</h1><br></br>
         <div >
           <p>
-            Detailed of Product, Suppliers , quick stock reports, and accurate
+            Complete DetailS of Product, Suppliers , quick stock reports, and accurate
             inventory and Analysis of goods 
           </p>
           <ul>
