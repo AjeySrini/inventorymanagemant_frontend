@@ -15,8 +15,7 @@ const Dashboard = () => {
           </p>
           <ul>
             <ol>
-              Keep a&nbsp;record of&nbsp;different product
-               variants and prices and its condition
+              Keep a record of different product variants and prices and its condition
             </ol>
             <ol>
               Records of Sold goods and product 
