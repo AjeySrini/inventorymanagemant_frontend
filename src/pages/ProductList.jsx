@@ -10,7 +10,7 @@ const ProductList = () => {
     description: "",
     price: 0,
     quantity: 0,
-    supplier: "",
+    supplier: [],
     category_name: "",
     overallreview: 0,
   }]);
@@ -23,9 +23,23 @@ const ProductList = () => {
     loadprofile();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  const [searchText, setSearchText] = useState('');
+  const filteredProducts = products.filter((product) =>
+    product.product_name.toLowerCase().includes(searchText.toLowerCase())
+  );
+
   return (
     <div className="product-list-container">
     <span className="headname">Product List</span>
+    <div className="search-box">
+        <input
+          type="text"
+          placeholder="Search by Product Name"
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+        />
+        <button onClick={() => setSearchText('')}>Clear</button>
+      </div>
     <table className="product-table">
       <thead>
         <tr>
@@ -40,15 +54,21 @@ const ProductList = () => {
         </tr>
       </thead>
       <tbody>
-        { products.length > 0 ?
-        (products.map((product) => (
+        { filteredProducts.length > 0 ?
+        (filteredProducts.map((product) => (
           <tr key={product.product_id}>
             <td>{product.product_id}</td>
             <td>{product.product_name}</td>
             <td>{product.description}</td>
-            <td>${product.price}</td>
+            <td>{product.price}</td>
             <td>{product.quantity}</td>
-            <td>{product.supplier}</td>
+            <td>
+                
+            { product.supplier.map((suppliers, index) => (
+                    <li key={index}>{suppliers}</li>
+                  ))}
+               
+              </td>
             <td>{product.category_name}</td>
             <td>{product.overallreview}</td>
           </tr>
