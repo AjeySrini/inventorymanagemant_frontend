@@ -67,3 +67,18 @@ main{
   
 }
 
+.dashbord{
+  display: block;
+  text-align: center;
+  padding: 5px;
+  font-style: italic;
+  font-family: 'Segoe UI';
+  background-color: #f8f8f8;
+
+}
+
+.landingDash{
+  word-spacing: 1px;
+  padding: 4px;
+  font-size: large;
+}
