@@ -2,6 +2,7 @@ import React ,{useEffect,useState} from "react";
 import { getAllProduct } from "../profile";
 
 import './ProductList.css';
+import { Link } from "react-router-dom";
 
 const ProductList = () => {
     const [products, setproduct] = useState([{
@@ -51,6 +52,7 @@ const ProductList = () => {
           <th>Supplier</th>
           <th>Category Name</th>
           <th>Overall Review</th>
+          <th>Modify</th>
         </tr>
       </thead>
       <tbody>
@@ -71,6 +73,8 @@ const ProductList = () => {
               </td>
             <td>{product.category_name}</td>
             <td>{product.overallreview}</td>
+            <td> <Link to={`/editproducts/?id=${product.product_id}`} >click here</Link>
+                </td>
           </tr>
         ))):""}
       </tbody>

@@ -9,6 +9,7 @@ import Comment from './pages/Comment.jsx';
 import ProductForm from './pages/ProductForm.jsx';
 import ProductList from './pages/ProductList.jsx';
 import Header from './components/Header';
+import ModifyProduct from './pages/ModifyProduct';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/product" element={<ProductForm />} />
           <Route path="/productList" element={<ProductList />} />
+          <Route path="/editproducts" element={<ModifyProduct />} />
         </Routes>
       </Sidebar>
     </BrowserRouter>

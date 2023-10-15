@@ -10,13 +10,11 @@ export const addProduct= async (productData) => {
       body: JSON.stringify(productData)
     }
   );
-  console.log("response",response)
   const product = await response.json();
   if(product.error!==undefined)
   alert(product.error);
 else
 alert(product.msg);
-  console.log("product",product)
   return product;
 }
 
@@ -45,6 +43,23 @@ export const updateProduct = async (product_id, productData) => {
     `${backendUrl}/api/products/${product_id}`,
     {
       method: 'PUT',
+      body: JSON.stringify(productData),
+      headers: { 'Content-Type': 'application/json' }
+    }
+  );
+  const product = await response.json();
+  if(product.error!==undefined)
+  alert(product.error);
+else
+alert(product.msg);
+  return product;
+}
+
+export const getbyProductid = async (product_id, productData) => {
+  const response = await fetch(
+    `${backendUrl}/api/products/${product_id}`,
+    {
+      method: 'GET',
       body: JSON.stringify(productData),
       headers: { 'Content-Type': 'application/json' }
     }
