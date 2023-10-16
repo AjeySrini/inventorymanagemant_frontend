@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes,Navigate  } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Dashboard from './pages/Dashboard.jsx';
 import About from './pages/About.jsx';
@@ -18,15 +18,14 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<Dashboard />} />
-          <Route path="/productList" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/about" element={<About />} />
           <Route path="/comment" element={<Comment />} />
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/product" element={<ProductForm />} />
           <Route path="/productdetail" element={<ProductList />} />
           <Route path="/editproducts" element={<ModifyProduct />} />
-          <Route path="*" element={<Dashboard />
-        } />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Sidebar>
     </BrowserRouter>
