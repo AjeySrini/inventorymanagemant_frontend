@@ -18,13 +18,15 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<Dashboard />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/productList" element={<Dashboard />} />
           <Route path="/about" element={<About />} />
           <Route path="/comment" element={<Comment />} />
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/product" element={<ProductForm />} />
-          <Route path="/productList" element={<ProductList />} />
+          <Route path="/productdetail" element={<ProductList />} />
           <Route path="/editproducts" element={<ModifyProduct />} />
+          <Route path="*" element={<Dashboard />
+        } />
         </Routes>
       </Sidebar>
     </BrowserRouter>

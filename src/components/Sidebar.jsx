@@ -16,7 +16,7 @@ const Sidebar = ({children}) => {
     const toggle = () => setIsOpen (!isOpen);
     const menuItem=[
         {
-            path:"/",
+            path:"/productList",
             name:"Dashboard",
             icon:<FaTh/>
         },
@@ -26,7 +26,7 @@ const Sidebar = ({children}) => {
             icon:<FaShoppingBag/>
         },
         {
-            path:"/productList",
+            path:"/productdetail",
             name:"Product List",
             icon:<FaThList/>
         },
